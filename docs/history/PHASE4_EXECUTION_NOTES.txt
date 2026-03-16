@@ -1,0 +1,16 @@
+ClariceOS-Theme — Phase 4 executed
+
+Scope:
+- Expanded GTK4/libadwaita coverage in ClariceOS-Theme/gtk-4.0/common.css
+- Kept light/dark token files intact while widening selector coverage
+- Added explicit notes about realistic GTK4/libadwaita theming limits on current GNOME
+
+Primary focus areas closed in this phase:
+- headerbar / toolbarview / tabs / viewswitcher
+- buttons / splitbuttons / menubuttons / focus-visible states
+- entries / password entries / search bars / text selection
+- preferences windows / groups / boxed lists / status pages
+- navigation sidebars / split views / overlay split views
+- switches / checks / radios / scales / progress / scrollbars
+- popovers / menus / emoji chooser / completion popovers
+- notebooks / tab views / calendars / status pages / links / spinners

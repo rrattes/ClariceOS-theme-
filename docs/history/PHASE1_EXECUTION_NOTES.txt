@@ -1,0 +1,11 @@
+ClariceOS-Theme — Phase 1 Execution
+
+Completed:
+- froze the approved visual reference
+- created DESIGN_SPEC_1.0.md
+- created frozen_component_specs.json
+- promoted the mockup artboard and preview as source-of-truth references
+
+Important:
+- Phase 1 intentionally does not certify asset correctness or runtime correctness.
+- It only freezes the target so subsequent phases stop drifting visually.

@@ -1,0 +1,4 @@
+Phase 5 execution notes:
+- Expanded GTK3 common.css to reduce visual divergence between legacy GTK3 apps and the already consolidated Shell/GTK4 layers.
+- Added GTK3-specific selectors for tree/list views, sidebars, dialogs, file chooser, shortcuts windows, infobars, OSD and notebook/tab chrome.
+- This phase is source-level consolidation; live runtime validation remains for the release-test phase.

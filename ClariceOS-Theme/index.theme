@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=ClariceOS-Theme
+Comment=GNOME theme recreated from the approved mockup
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=ClariceOS-Theme
+MetacityTheme=Adwaita
+IconTheme=Adwaita
+CursorTheme=Adwaita
+ButtonLayout=appmenu:minimize,maximize,close

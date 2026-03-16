@@ -1,0 +1,10 @@
+ClariceOS-Theme — Consolidação da variante light do GNOME Shell
+
+Causa do arquivo light ser menor no pacote anterior:
+- gnome-shell.css (dark) tinha 201 linhas e era a variante default completa.
+- gnome-shell-light.css tinha 63 linhas e era apenas uma variante opcional resumida.
+
+Correção nesta versão:
+- gnome-shell-light.css foi refeito com a mesma cobertura de seletores do dark.
+- Foram adicionados gnome-shell-dark.css, use-light-shell.sh e use-dark-shell.sh.
+- O nome interno do tema foi consolidado para ClariceOS-Theme.

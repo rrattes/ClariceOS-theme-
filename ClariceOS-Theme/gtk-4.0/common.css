@@ -1,0 +1,785 @@
+/*
+ * ClariceOS-Theme — GTK4/libadwaita shared rules
+ * Phase 4 closes the GTK4 layer with broader widget coverage while
+ * staying visually faithful to the approved mockup and GNOME current-era apps.
+ */
+
+* {
+  -gtk-icon-shadow: none;
+  text-shadow: none;
+  outline-width: 0;
+  outline-color: transparent;
+}
+
+window,
+.background,
+window.background,
+dialog,
+dialog.background,
+messagedialog,
+preferenceswindow,
+adwpreferenceswindow,
+windowhandle {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
+}
+
+.navigation-view,
+toolbarview,
+leaflet,
+overlay,
+box,
+stack,
+stacksidebar,
+preferencespage,
+preferencesgroup,
+adwpreferencespage,
+adwpreferencesgroup,
+clamp,
+adwclamp,
+statuspage,
+adwstatuspage,
+content,
+.navigation-sidebar,
+viewstack {
+  background: transparent;
+  color: @window_fg_color;
+}
+
+window.csd,
+window.background.csd,
+dialog.background.csd,
+preferenceswindow,
+window > box,
+dialog > box {
+  border-radius: 14px;
+}
+
+headerbar,
+.titlebar,
+.titlebar.default-decoration,
+.titlebar.default-decoration:backdrop,
+headerbar.titlebar,
+windowhandle > box > headerbar,
+toolbarview > headerbar,
+viewswitcherbar,
+tabbar,
+tabbox {
+  min-height: 42px;
+  padding: 4px 8px;
+  border: none;
+  border-bottom: 1px solid @headerbar_border_color;
+  background-color: @headerbar_bg_color;
+  color: @headerbar_fg_color;
+  box-shadow: 0 2px 10px alpha(@shadow_color, 0.15);
+}
+
+headerbar:backdrop,
+.titlebar:backdrop,
+windowhandle > box > headerbar:backdrop {
+  background-color: mix(@headerbar_bg_color, @window_bg_color, 0.82);
+  color: alpha(@headerbar_fg_color, 0.88);
+}
+
+headerbar button,
+.titlebar button,
+viewswitcher button,
+view switcher button,
+stackswitcher button,
+tabs tab button,
+tabbar tabbox tab button,
+windowcontrols button {
+  min-height: 32px;
+}
+
+toolbar,
+.inline-toolbar,
+.bottom-bar,
+actionbar,
+.toolbar,
+linked > menubutton,
+box.toolbar,
+.toolbarview > box,
+.toolbarview > clamp {
+  background: transparent;
+  color: @window_fg_color;
+}
+
+button,
+.button,
+spinbutton button,
+combobox button,
+.dropdown > button,
+linked > button,
+modelbutton.flat,
+menubutton > button,
+splitbutton > button,
+splitbutton > menubutton > button,
+windowcontrols button,
+viewswitcher button,
+stackswitcher button,
+.toggle,
+.view switcher button,
+preferencesgroup button {
+  min-height: 32px;
+  min-width: 32px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid @border_color;
+  background-image: none;
+  background-color: @card_bg_color;
+  color: @window_fg_color;
+  box-shadow: 0 3px 10px alpha(@shadow_color, 0.22);
+}
+
+button:hover,
+.button:hover,
+modelbutton:hover,
+spinbutton button:hover,
+dropdown > button:hover,
+menubutton > button:hover,
+splitbutton > button:hover,
+stackswitcher button:hover,
+viewswitcher button:hover {
+  background-color: shade(@card_bg_color, 1.03);
+  color: @window_fg_color;
+}
+
+button:active,
+button:checked,
+.button:active,
+.button:checked,
+modelbutton:active,
+.toggle:checked,
+menubutton > button:active,
+splitbutton > button:active,
+stackswitcher button:checked,
+viewswitcher button:checked,
+.view switcher button:checked {
+  background-color: shade(@card_bg_color, 0.96);
+  color: @window_fg_color;
+}
+
+button:focus-visible,
+.button:focus-visible,
+menubutton > button:focus-visible,
+splitbutton > button:focus-visible,
+stackswitcher button:focus-visible,
+viewswitcher button:focus-visible {
+  border-color: @focus_ring_color;
+  box-shadow: 0 0 0 3px alpha(@focus_ring_color, 0.22);
+}
+
+button.flat,
+button.flat:hover,
+button.image-button,
+button.image-button:hover,
+button.text-button,
+button.text-button:hover,
+modelbutton.flat,
+modelbutton.flat:hover,
+windowcontrols button,
+windowcontrols button:hover {
+  box-shadow: none;
+  background: transparent;
+  border-color: transparent;
+}
+
+button.suggested-action,
+button.suggested-action:hover,
+button.suggested-action:active,
+button.pill.suggested-action,
+button.pill.suggested-action:hover,
+suggested-action,
+splitbutton.suggested-action > button,
+splitbutton.suggested-action > menubutton > button {
+  border-color: alpha(@accent_bg_color, 0.25);
+  background-image: linear-gradient(to right, shade(@accent_bg_color, 1.06), shade(@accent_bg_color, 0.96));
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+}
+
+button.destructive-action,
+button.destructive-action:hover,
+splitbutton.destructive-action > button,
+splitbutton.destructive-action > menubutton > button {
+  background-color: @destructive_bg_color;
+  color: @destructive_fg_color;
+  border-color: alpha(@destructive_bg_color, 0.45);
+}
+
+button.pill,
+.pill button,
+button.circular,
+button.flat.circular,
+.toggle,
+menubutton.circular > button,
+splitbutton.circular > button,
+viewswitcher button,
+stackswitcher button,
+linked > button:first-child:last-child {
+  border-radius: 9999px;
+}
+
+entry,
+searchentry,
+spinbutton,
+combobox > box,
+.dropdown > button,
+passwordentry,
+textview,
+text,
+list,
+listview,
+treeview.view,
+columnview,
+preferencesgroup,
+.card,
+.frame,
+scrolledwindow.frame,
+.viewport,
+boxedlist,
+.boxed-list,
+windowcontrols,
+spinbutton > text,
+dropdown > button > box,
+entry > text,
+searchbar > revealer > box,
+searchbar entry,
+view,
+textview > border,
+.navigation-sidebar,
+.navigation-sidebar > scrolledwindow,
+.sidebar-pane,
+toast,
+toastoverlay,
+inlineview,
+viewstack,
+windowhandle > box > box.__clarice_unused_selector {
+  border-radius: 12px;
+}
+
+entry,
+searchentry,
+spinbutton,
+combobox > box,
+.dropdown > button,
+passwordentry,
+searchbar entry,
+entry > text,
+spinbutton > text {
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid @border_color;
+  background-color: @view_bg_color;
+  color: @view_fg_color;
+  box-shadow: inset 0 1px 0 alpha(white, 0.04);
+}
+
+entry image,
+searchentry image,
+passwordentry image {
+  color: alpha(@view_fg_color, 0.72);
+}
+
+entry:focus,
+searchentry:focus,
+spinbutton:focus-within,
+.dropdown > button:focus,
+combobox > box:focus,
+passwordentry:focus-within,
+searchbar entry:focus,
+entry > text:focus {
+  border-color: @focus_ring_color;
+  box-shadow: 0 0 0 3px alpha(@focus_ring_color, 0.22);
+}
+
+entry selection,
+text selection,
+textview text selection {
+  background-color: alpha(@accent_bg_color, 0.85);
+  color: @accent_fg_color;
+}
+
+entry:disabled,
+searchentry:disabled,
+button:disabled,
+label:disabled,
+menubutton > button:disabled,
+splitbutton > button:disabled,
+stackswitcher button:disabled,
+viewswitcher button:disabled {
+  color: @insensitive_fg_color;
+}
+
+entry:disabled,
+searchentry:disabled,
+button:disabled,
+menubutton > button:disabled,
+splitbutton > button:disabled {
+  background-color: @insensitive_bg_color;
+  border-color: alpha(@border_color, 0.65);
+  box-shadow: none;
+}
+
+preferencespage,
+preferencesgroup,
+clamp,
+statuspage,
+.navigation-sidebar,
+.sidebar-pane,
+.card,
+windowpreferences,
+adwpreferencespage,
+adwpreferencesgroup,
+adwstatuspage,
+adwclamp {
+  background: transparent;
+  color: @window_fg_color;
+}
+
+preferencesgroup > box,
+adwpreferencesgroup > box,
+.card,
+.frame,
+boxedlist,
+.boxed-list,
+box.card,
+scrolledwindow.frame > viewport,
+list.boxed-list,
+list.boxed-list > row,
+.toast,
+toast,
+statuspage > box,
+statuspage > scrolledwindow > viewport {
+  background-color: @card_bg_color;
+  color: @card_fg_color;
+  border: 1px solid @subtle_border_color;
+  box-shadow: 0 6px 20px alpha(@shadow_color, 0.14);
+}
+
+preferencesgroup,
+adwpreferencesgroup,
+.card,
+.frame,
+boxedlist,
+.boxed-list,
+statuspage > box {
+  padding: 0;
+}
+
+preferencesgroup,
+adwpreferencesgroup {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+preferencesgroup > box > box,
+adwpreferencesgroup > box > box,
+boxedlist > row,
+.boxed-list > row,
+statuspage > box > box {
+  margin: 0;
+}
+
+.preferences,
+.preferences-page,
+preferencespage > scrolledwindow > viewport > clamp,
+preferenceswindow > box,
+preferenceswindow > clamp,
+adwpreferenceswindow > box {
+  background: transparent;
+}
+
+.sidebar,
+.navigation-sidebar,
+list.navigation-sidebar,
+navigation-sidebar,
+preferenceswindow .navigation-sidebar,
+splitview navigation-sidebar,
+navigationview > navigation-sidebar,
+.overlay-split-view .sidebar-pane,
+.sidebar-pane {
+  background-color: mix(@sidebar_bg_color, @window_bg_color, 0.72);
+  color: @sidebar_fg_color;
+  border-right: 1px solid alpha(@border_color, 0.65);
+}
+
+.sidebar row,
+.navigation-sidebar row,
+.sidebar list row,
+.navigation-sidebar list row,
+preferenceswindow row,
+splitview navigation-sidebar row,
+.overlay-split-view .sidebar-pane row {
+  min-height: 38px;
+  margin: 4px 8px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: transparent;
+  color: @sidebar_fg_color;
+}
+
+.sidebar row:selected,
+.navigation-sidebar row:selected,
+.sidebar row:hover,
+.navigation-sidebar row:hover,
+splitview navigation-sidebar row:selected,
+splitview navigation-sidebar row:hover,
+.overlay-split-view .sidebar-pane row:selected,
+.overlay-split-view .sidebar-pane row:hover {
+  background-color: alpha(@accent_bg_color, 0.09);
+  color: @window_fg_color;
+}
+
+list,
+listview,
+row,
+columnview row,
+columnview,
+treeview.view,
+richlist,
+boxedlist,
+.boxed-list,
+listbox {
+  background: transparent;
+  color: @window_fg_color;
+}
+
+row,
+listview row,
+boxedlist > row,
+.boxed-list > row,
+columnview row,
+listbox row,
+expander row {
+  min-height: 38px;
+  border-radius: 10px;
+  margin: 2px 0;
+}
+
+row:hover,
+listview row:hover,
+columnview row:hover,
+listbox row:hover,
+boxedlist > row:hover,
+.boxed-list > row:hover {
+  background-color: @hover_fill;
+}
+
+row:selected,
+listview row:selected,
+columnview row:selected,
+listbox row:selected,
+boxedlist > row:selected,
+.boxed-list > row:selected,
+.activatable:selected,
+.navigation-sidebar row:selected {
+  background-color: alpha(@accent_bg_color, 0.12);
+  color: @window_fg_color;
+}
+
+separator,
+.horizontal separator,
+.vertical separator,
+paned > separator,
+separator.sidebar,
+headerbar separator,
+.toolbar separator {
+  background-color: @subtle_border_color;
+  color: @subtle_border_color;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+switch {
+  min-width: 52px;
+  min-height: 30px;
+  border-radius: 9999px;
+  border: 1px solid alpha(@border_color, 0.85);
+  background-color: @switch_off_bg;
+  box-shadow: inset 0 1px 1px alpha(black, 0.10);
+}
+
+switch:hover {
+  background-color: mix(@switch_off_bg, @window_fg_color, 0.04);
+}
+
+switch:checked {
+  background-image: linear-gradient(to right, shade(@accent_bg_color, 1.06), shade(@accent_bg_color, 0.96));
+  background-color: @accent_bg_color;
+  border-color: alpha(@accent_bg_color, 0.65);
+}
+
+switch slider {
+  min-width: 24px;
+  min-height: 24px;
+  margin: 2px;
+  border-radius: 9999px;
+  background-color: @switch_knob_bg;
+  box-shadow: 0 1px 3px alpha(black, 0.20);
+}
+
+switch:checked slider {
+  background-color: white;
+}
+
+check,
+radio,
+checkbutton > check,
+checkbutton > radio {
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 6px;
+  border: 1px solid alpha(@border_color, 0.9);
+  background-color: @view_bg_color;
+  color: transparent;
+}
+
+radio,
+checkbutton > radio {
+  border-radius: 9999px;
+}
+
+check:checked,
+radio:checked,
+checkbutton:checked > check,
+checkbutton:checked > radio {
+  background-color: @accent_bg_color;
+  border-color: @accent_bg_color;
+  color: white;
+}
+
+check:indeterminate,
+checkbutton:indeterminate > check {
+  background-color: alpha(@accent_bg_color, 0.65);
+  border-color: @accent_bg_color;
+}
+
+scale,
+progressbar,
+levelbar,
+scrollbar {
+  color: @window_fg_color;
+}
+
+scale trough,
+progressbar trough,
+levelbar trough,
+scrollbar trough,
+trough {
+  border-radius: 9999px;
+  background-color: @slider_bg_color;
+  border: none;
+}
+
+scale highlight,
+progressbar progress,
+levelbar block.filled,
+scrollbar slider:hover,
+scale fill,
+progressbar > trough > progress {
+  border-radius: 9999px;
+  background-image: linear-gradient(to right, shade(@accent_bg_color, 1.04), shade(@accent_bg_color, 0.98));
+  background-color: @accent_bg_color;
+}
+
+scale slider,
+scrollbar slider {
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 9999px;
+  border: 1px solid alpha(@border_color, 0.25);
+  background-color: white;
+  box-shadow: 0 2px 5px alpha(@shadow_color, 0.35);
+}
+
+scrollbar slider {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+scrollbar.vertical slider {
+  min-height: 32px;
+}
+
+scrollbar.horizontal slider {
+  min-width: 32px;
+}
+
+menu,
+popover,
+.background.popup,
+.popup-menu,
+contextmenu,
+.tooltip,
+popover.menu,
+popover.background,
+popover contents,
+.tooltip.background,
+emojichooser,
+emojichooser contents,
+completion,
+completion popover,
+autocomplete {
+  background-color: @popover_bg_color;
+  color: @popover_fg_color;
+  border-radius: 14px;
+  border: 1px solid @subtle_border_color;
+  box-shadow: 0 14px 34px alpha(@shadow_color, 0.35);
+}
+
+popover contents,
+menu contents,
+.tooltip box,
+emojichooser contents,
+completion > popover > contents {
+  padding: 10px;
+}
+
+menuitem,
+modelbutton,
+popover modelbutton,
+popover menuitem,
+completion row,
+emojichooser button {
+  min-height: 30px;
+  border-radius: 9px;
+  padding: 6px 10px;
+}
+
+menuitem:hover,
+modelbutton:hover,
+popover modelbutton:hover,
+popover menuitem:hover,
+completion row:hover,
+emojichooser button:hover {
+  background-color: @hover_fill;
+}
+
+notebook > header,
+tabview > tabbar,
+taboverview,
+tabbox {
+  background: transparent;
+  border: none;
+}
+
+notebook > header > tabs > tab,
+tabbar tabbox tab,
+taboverview tab,
+view switcher button,
+viewswitcher button {
+  min-height: 32px;
+  padding: 8px 14px;
+  margin: 4px 4px 0 0;
+  border-radius: 10px 10px 0 0;
+  color: @window_fg_color;
+}
+
+notebook > header > tabs > tab:checked,
+tabbar tabbox tab:selected,
+taboverview tab:selected,
+view switcher button:checked,
+viewswitcher button:checked {
+  background-color: alpha(@accent_bg_color, 0.12);
+  color: @window_fg_color;
+}
+
+calendar,
+adw-calendar,
+calendar.view {
+  border-radius: 14px;
+  background-color: @card_bg_color;
+  color: @window_fg_color;
+}
+
+calendar:selected,
+calendar.highlight,
+adw-calendar:selected {
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+}
+
+calendar.button,
+calendar.header,
+calendar.view header {
+  background: transparent;
+  color: @window_fg_color;
+}
+
+statuspage,
+statuspage > box,
+statuspage .title,
+statuspage .description,
+adwstatuspage,
+adwstatuspage > box,
+adwstatuspage .title,
+adwstatuspage .description {
+  color: @window_fg_color;
+}
+
+navigationview,
+splitview,
+overlay-split-view,
+.navigation-view,
+.navigation-sidebar,
+.navigation-page,
+content-page,
+inlineview,
+clamp,
+flap,
+leaflet,
+carousel,
+carousel indicator,
+breakpoint {
+  background: transparent;
+  color: @window_fg_color;
+}
+
+navigationview > headerbar,
+splitview > headerbar,
+overlay-split-view > headerbar,
+leaflet > headerbar,
+flap > headerbar {
+  background-color: @headerbar_bg_color;
+}
+
+spinner {
+  color: @link_color;
+}
+
+link,
+.link,
+label link,
+button.link {
+  color: @link_color;
+}
+
+selection,
+.highlight,
+accent,
+.accent,
+:selected {
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+}
+
+.success,
+.success-color,
+.success-label {
+  color: @success_text_color;
+}
+
+.warning,
+.warning-color,
+.warning-label {
+  color: @warning_text_color;
+}
+
+.error,
+.error-color,
+.error-label {
+  color: @error_text_color;
+}

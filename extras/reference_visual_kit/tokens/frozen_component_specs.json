@@ -1,0 +1,493 @@
+{
+  "theme_name": "ClariceOS-Theme",
+  "phase": "Phase 1 complete \u2014 visual reference frozen",
+  "reference_artboard": {
+    "file": "extras/reference_visual_kit/reference/original_mockup.png",
+    "width": 1024,
+    "height": 1536
+  },
+  "style_intent": {
+    "keywords": [
+      "soft proprietary premium",
+      "macOS-grade polish",
+      "GNOME-appropriate restraint",
+      "rounded geometry",
+      "subtle borders",
+      "blue accent",
+      "deep blue-gray dark mode"
+    ],
+    "do_not_change_without_reopening_phase_1": true
+  },
+  "semantic_palette": {
+    "light_bg": "#F1F3F7",
+    "light_surface": "#FBFBFC",
+    "light_surface_alt": "#E8ECF3",
+    "light_border": "#C9D0DB",
+    "light_text": "#4A5260",
+    "light_text_soft": "#7D8796",
+    "accent_blue": "#2A73D6",
+    "accent_blue_soft": "#AFC6E8",
+    "accent_blue_lighter": "#BCD3F3",
+    "accent_blue_2": "#4D99FD",
+    "dark_bg": "#2E3642",
+    "dark_bg_2": "#3D4758",
+    "dark_bg_3": "#4A5667",
+    "dark_bg_4": "#7A8693",
+    "dark_surface": "#313947",
+    "dark_surface_alt": "#232A35",
+    "dark_border": "#5B6676",
+    "dark_text": "#F4F6F8",
+    "dark_text_soft": "#C7CDD6",
+    "knob_light": "#F3F3F7",
+    "knob_dark": "#364050",
+    "shadow_dark": "rgba(23,29,38,0.35)",
+    "shadow_light": "rgba(52,63,79,0.16)",
+    "success_green": "#4CB244",
+    "warning_yellow": "#F2D56F",
+    "warning_orange": "#E69A36",
+    "danger_red": "#E5534B",
+    "pink": "#E06798",
+    "magenta": "#D04D9B",
+    "gray_chip": "#7E8794"
+  },
+  "sampled_reference": {
+    "bg_sample": "#F1F3F7",
+    "light_primary_sample": "#1662C0",
+    "dark_surface_sample": "#2E3640",
+    "dark_primary_button_sample": "#CACEDB",
+    "shell_dark_sample": "#2D3540",
+    "files_panel_bg_sample": "#E3E9F1"
+  },
+  "frozen_metrics": {
+    "gtk_window_radius_px": 14,
+    "gtk_card_radius_px": 12,
+    "gtk_button_radius_px": 10,
+    "gtk_button_min_height_px": 32,
+    "gtk_button_padding_px": [
+      8,
+      14
+    ],
+    "gtk_entry_radius_px": 12,
+    "gtk_entry_min_height_px": 34,
+    "gtk_entry_padding_px": [
+      6,
+      12
+    ],
+    "gtk_headerbar_min_height_px": 42,
+    "shell_panel_height_px": 32,
+    "shell_panel_button_radius_px": 12,
+    "shell_popup_radius_px": 16,
+    "shell_button_radius_px": 10,
+    "shell_button_min_height_px": 36,
+    "shell_search_min_height_px": 38,
+    "shell_calendar_day_size_px": 34,
+    "shell_calendar_day_radius_px": 10,
+    "shell_slider_track_height_px": 8,
+    "shell_slider_handle_radius_px": 10,
+    "shell_toggle_size_px": [
+      52,
+      30
+    ],
+    "shell_dash_radius_px": 18
+  },
+  "shadow_tokens": {
+    "light_soft": "0 3px 10px rgba(52,63,79,0.22)",
+    "light_card": "0 6px 20px rgba(52,63,79,0.18)",
+    "light_headerbar": "0 2px 10px rgba(52,63,79,0.15)",
+    "dark_shell_panel": "0 4px 10px rgba(23,29,38,0.35)",
+    "dark_shell_popup": "0 18px 36px rgba(23,29,38,0.40)",
+    "dark_shell_dash": "0 12px 24px rgba(23,29,38,0.36)"
+  },
+  "asset_reference_specs": {
+    "button-dark-default.png": {
+      "canvas": {
+        "width": 154,
+        "height": 53
+      },
+      "visual_bbox": {
+        "left": 4,
+        "top": 5,
+        "right": 150,
+        "bottom": 50,
+        "width": 146,
+        "height": 45
+      }
+    },
+    "button-dark-primary.png": {
+      "canvas": {
+        "width": 198,
+        "height": 53
+      },
+      "visual_bbox": {
+        "left": 4,
+        "top": 5,
+        "right": 194,
+        "bottom": 50,
+        "width": 190,
+        "height": 45
+      }
+    },
+    "button-light-default.png": {
+      "canvas": {
+        "width": 170,
+        "height": 51
+      },
+      "visual_bbox": {
+        "left": 3,
+        "top": 4,
+        "right": 167,
+        "bottom": 49,
+        "width": 164,
+        "height": 45
+      }
+    },
+    "button-light-primary.png": {
+      "canvas": {
+        "width": 202,
+        "height": 53
+      },
+      "visual_bbox": {
+        "left": 4,
+        "top": 5,
+        "right": 198,
+        "bottom": 50,
+        "width": 194,
+        "height": 45
+      }
+    },
+    "checkbox-dark-checked.png": {
+      "canvas": {
+        "width": 28,
+        "height": 28
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 2,
+        "right": 26,
+        "bottom": 26,
+        "width": 24,
+        "height": 24
+      }
+    },
+    "checkbox-light-checked.png": {
+      "canvas": {
+        "width": 28,
+        "height": 28
+      },
+      "visual_bbox": {
+        "left": 1,
+        "top": 1,
+        "right": 27,
+        "bottom": 27,
+        "width": 26,
+        "height": 26
+      }
+    },
+    "clock-dark-icon.png": {
+      "canvas": {
+        "width": 50,
+        "height": 50
+      },
+      "visual_bbox": {
+        "left": 3,
+        "top": 3,
+        "right": 47,
+        "bottom": 47,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "folder-blue.png": {
+      "canvas": {
+        "width": 70,
+        "height": 52
+      },
+      "visual_bbox": {
+        "left": 4,
+        "top": 4,
+        "right": 67,
+        "bottom": 50,
+        "width": 63,
+        "height": 46
+      }
+    },
+    "folder-dark.png": {
+      "canvas": {
+        "width": 70,
+        "height": 52
+      },
+      "visual_bbox": {
+        "left": 3,
+        "top": 3,
+        "right": 69,
+        "bottom": 51,
+        "width": 66,
+        "height": 48
+      }
+    },
+    "folder-ice.png": {
+      "canvas": {
+        "width": 70,
+        "height": 52
+      },
+      "visual_bbox": {
+        "left": 3,
+        "top": 4,
+        "right": 67,
+        "bottom": 50,
+        "width": 64,
+        "height": 46
+      }
+    },
+    "gear-dark-icon.png": {
+      "canvas": {
+        "width": 70,
+        "height": 70
+      },
+      "visual_bbox": {
+        "left": 1,
+        "top": 5,
+        "right": 56,
+        "bottom": 60,
+        "width": 55,
+        "height": 55
+      }
+    },
+    "magnifier-dark-icon.png": {
+      "canvas": {
+        "width": 74,
+        "height": 74
+      },
+      "visual_bbox": {
+        "left": 9,
+        "top": 9,
+        "right": 65,
+        "bottom": 65,
+        "width": 56,
+        "height": 56
+      }
+    },
+    "radio-dark-on.png": {
+      "canvas": {
+        "width": 26,
+        "height": 26
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 2,
+        "right": 24,
+        "bottom": 24,
+        "width": 22,
+        "height": 22
+      }
+    },
+    "radio-light-on.png": {
+      "canvas": {
+        "width": 26,
+        "height": 26
+      },
+      "visual_bbox": {
+        "left": 1,
+        "top": 1,
+        "right": 25,
+        "bottom": 25,
+        "width": 24,
+        "height": 24
+      }
+    },
+    "search-light-icon.png": {
+      "canvas": {
+        "width": 70,
+        "height": 70
+      },
+      "visual_bbox": {
+        "left": 9,
+        "top": 9,
+        "right": 65,
+        "bottom": 65,
+        "width": 56,
+        "height": 56
+      }
+    },
+    "shell-pill-dark.png": {
+      "canvas": {
+        "width": 170,
+        "height": 40
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 4,
+        "right": 168,
+        "bottom": 36,
+        "width": 166,
+        "height": 32
+      }
+    },
+    "shell-pill-light.png": {
+      "canvas": {
+        "width": 170,
+        "height": 40
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 4,
+        "right": 168,
+        "bottom": 36,
+        "width": 166,
+        "height": 32
+      }
+    },
+    "slider-dark.png": {
+      "canvas": {
+        "width": 374,
+        "height": 44
+      },
+      "visual_bbox": {
+        "left": 5,
+        "top": 9,
+        "right": 369,
+        "bottom": 35,
+        "width": 364,
+        "height": 26
+      }
+    },
+    "slider-light.png": {
+      "canvas": {
+        "width": 374,
+        "height": 44
+      },
+      "visual_bbox": {
+        "left": 5,
+        "top": 8,
+        "right": 369,
+        "bottom": 36,
+        "width": 364,
+        "height": 28
+      }
+    },
+    "star-outline.png": {
+      "canvas": {
+        "width": 70,
+        "height": 70
+      },
+      "visual_bbox": {
+        "left": 5,
+        "top": 5,
+        "right": 65,
+        "bottom": 63,
+        "width": 60,
+        "height": 58
+      }
+    },
+    "toggle-dark-accent.png": {
+      "canvas": {
+        "width": 76,
+        "height": 42
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 5,
+        "right": 74,
+        "bottom": 37,
+        "width": 72,
+        "height": 32
+      }
+    },
+    "toggle-dark-off.png": {
+      "canvas": {
+        "width": 76,
+        "height": 42
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 5,
+        "right": 74,
+        "bottom": 37,
+        "width": 72,
+        "height": 32
+      }
+    },
+    "toggle-light-accent.png": {
+      "canvas": {
+        "width": 76,
+        "height": 42
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 5,
+        "right": 74,
+        "bottom": 37,
+        "width": 72,
+        "height": 32
+      }
+    },
+    "toggle-light-off.png": {
+      "canvas": {
+        "width": 76,
+        "height": 42
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 5,
+        "right": 74,
+        "bottom": 37,
+        "width": 72,
+        "height": 32
+      }
+    },
+    "toggle-light-on.png": {
+      "canvas": {
+        "width": 76,
+        "height": 42
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 5,
+        "right": 74,
+        "bottom": 37,
+        "width": 72,
+        "height": 32
+      }
+    },
+    "toggle-light-outline.png": {
+      "canvas": {
+        "width": 76,
+        "height": 42
+      },
+      "visual_bbox": {
+        "left": 2,
+        "top": 5,
+        "right": 74,
+        "bottom": 37,
+        "width": 72,
+        "height": 32
+      }
+    }
+  },
+  "special_constraints": {
+    "no_text_embedded_in_implementable_assets": true,
+    "no_shadow_clipping": true,
+    "folder_icons": {
+      "canvas_px": [
+        70,
+        52
+      ],
+      "target_visual_bbox_range": {
+        "width_px": [
+          63,
+          66
+        ],
+        "height_px": [
+          46,
+          48
+        ]
+      },
+      "rule": "Do not re-export folders using the earlier compressed 68x38 visual shape. Preserve the original mockup body proportion."
+    }
+  },
+  "phase2_notes": {
+    "asset_audit_completed": true,
+    "folder_assets_reconciled": true,
+    "audit_target": "Implementation assets in extras/reference_visual_kit/assets"
+  }
+}
