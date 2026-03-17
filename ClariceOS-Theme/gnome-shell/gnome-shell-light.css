@@ -70,19 +70,19 @@
     .app-folder-dialog,
     .datemenu-popover,
     .screen-shield-notifications-container {
-      color: #4A5260;
+      color: #404A58;
       background-gradient-direction: none;
-      background-color: rgba(251,251,252,0.98);
-      border: 1px solid #C9D0DB;
-      border-radius: 16px;
-      box-shadow: 0 18px 36px rgba(52,63,79,0.20);
+      background-color: rgba(248, 251, 255, 0.98);
+      border: 1px solid rgba(185, 196, 210, 0.90);
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(35,48,64,0.10), 0 18px 40px rgba(35,48,64,0.18);
     }
 
     .popup-menu-boxpointer,
     .candidate-popup-boxpointer {
-      -arrow-border-radius: 16px;
-      -arrow-background-color: rgba(251,251,252,0.98);
-      -arrow-border-color: #C9D0DB;
+      -arrow-border-radius: 18px;
+      -arrow-background-color: rgba(248, 251, 255, 0.98);
+      -arrow-border-color: rgba(185, 196, 210, 0.90);
       -arrow-base: 26px;
       -arrow-rise: 10px;
     }
@@ -361,17 +361,17 @@
     .message,
     .notification {
       margin: 0;
-      padding: 10px;
+      padding: 12px;
       border-radius: 14px;
-      border: 1px solid #C9D0DB;
+      border: 1px solid rgba(188, 200, 216, 0.90);
       background-color: rgba(255,255,255,0.96);
-      color: #4A5260;
-      box-shadow: none;
+      color: #404A58;
+      box-shadow: 0 1px 4px rgba(35,48,64,0.08);
     }
 
     .message:hover,
     .notification:hover {
-      background-color: rgba(251,251,252,0.98);
+      background-color: rgba(252, 254, 255, 0.98);
     }
 
     .message-title,
@@ -479,10 +479,10 @@
     .workspace-switcher-container,
     .search-section-content,
     .app-folder-dialog .folder-name-container {
-      background-color: rgba(251,251,252,0.98);
-      border: 1px solid #C9D0DB;
-      border-radius: 18px;
-      box-shadow: 0 12px 24px rgba(52,63,79,0.16);
+      background-color: rgba(246, 250, 255, 0.97);
+      border: 1px solid rgba(182, 196, 214, 0.88);
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(35,48,64,0.10), 0 14px 28px rgba(35,48,64,0.14);
     }
 
     .dash-item-container > StButton,
@@ -589,14 +589,14 @@
 
 
 
-/* RC6 macOS-inspired continuous top bar - light */
+/* RC8 — refined top bar — light */
 #panel {
   height: 34px;
   background-gradient-direction: none;
-  background-color: rgba(248, 250, 253, 0.92);
-  color: #4A5260;
+  background-color: rgba(238, 244, 252, 0.95);
+  color: #404A58;
   border: none;
-  box-shadow: inset 0 -1px rgba(194, 202, 214, 0.85);
+  box-shadow: inset 0 -1px rgba(175, 190, 210, 0.88);
 }
 
 #panel .panel-button,
@@ -613,20 +613,20 @@
   background-gradient-direction: none;
   background-color: transparent;
   box-shadow: none;
-  color: #4A5260;
+  color: rgba(58, 68, 82, 0.90);
 }
 
 #panel .panel-button:hover,
 #panel .panel-button:focus {
-  background-color: rgba(72, 84, 101, 0.10);
-  color: #39414E;
+  background-color: rgba(58, 74, 96, 0.10);
+  color: #363F4C;
 }
 
 #panel .panel-button:active,
 #panel .panel-button:checked,
 #panel .panel-button:overview {
-  background-color: rgba(42, 115, 214, 0.18);
-  color: #225EB5;
+  background-color: rgba(42, 115, 214, 0.16);
+  color: #1B5BAE;
 }
 
 #panel .panel-button.clock-display {
@@ -635,23 +635,23 @@
   border: none;
   border-radius: 10px;
   background-gradient-direction: none;
-  background-color: rgba(255, 255, 255, 0.58);
-  color: #38414D;
-  box-shadow: inset 0 1px rgba(255,255,255,0.55), 0 1px 2px rgba(50, 61, 77, 0.08);
+  background-color: rgba(255, 255, 255, 0.64);
+  color: #363F4C;
+  box-shadow: inset 0 1px rgba(255,255,255,0.60), inset 0 0 0 1px rgba(180,195,215,0.45), 0 1px 3px rgba(42,56,74,0.10);
   font-weight: 600;
 }
 
 #panel .panel-button.clock-display:hover,
 #panel .panel-button.clock-display:focus {
-  background-color: rgba(255, 255, 255, 0.78);
+  background-color: rgba(255, 255, 255, 0.82);
 }
 
 #panel .panel-button.clock-display:active,
 #panel .panel-button.clock-display:checked,
 #panel .panel-button.clock-display:overview {
-  background-color: rgba(42, 115, 214, 0.18);
-  color: #225EB5;
-  box-shadow: inset 0 1px rgba(255,255,255,0.22);
+  background-color: rgba(42, 115, 214, 0.16);
+  color: #1B5BAE;
+  box-shadow: inset 0 1px rgba(255,255,255,0.20);
 }
 
 #panel .panel-button .system-status-icon,
@@ -664,55 +664,53 @@
 
 
 
-/* RC7 — Quick Settings / control box refinement (light)
- * Goal: increase hierarchy, reduce plain white cards, improve tile quality.
- */
+/* RC8 — Quick Settings / control box refined depth (light) */
 .quick-settings {
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(193,201,214,0.88);
-  background-color: rgba(244,247,252,0.97);
-  box-shadow: 0 18px 42px rgba(50,62,80,0.18);
+  padding: 12px;
+  border-radius: 22px;
+  border: 1px solid rgba(178, 192, 210, 0.88);
+  background-color: rgba(242, 246, 252, 0.97);
+  box-shadow: 0 2px 8px rgba(35,48,64,0.10), 0 20px 44px rgba(35,48,64,0.18);
 }
 
 .quick-settings-grid {
-  spacing: 12px;
-  padding: 10px;
+  spacing: 10px;
+  padding: 8px;
 }
 
 .quick-settings .icon-button {
-  min-width: 38px;
-  min-height: 38px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
-  border-radius: 12px;
-  border: 1px solid rgba(193,201,214,0.84);
-  background-color: rgba(255,255,255,0.78);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+  border-radius: 13px;
+  border: 1px solid rgba(185,198,216,0.82);
+  background-color: rgba(255,255,255,0.82);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.64), 0 1px 3px rgba(40,55,74,0.08);
 }
 
 .quick-settings .icon-button:hover,
 .quick-settings .icon-button:focus {
-  background-color: rgba(255,255,255,0.94);
-  border-color: rgba(181,191,205,0.96);
+  background-color: rgba(255,255,255,0.96);
+  border-color: rgba(172,186,204,0.96);
 }
 
 .quick-toggle,
 .quick-menu-toggle {
-  min-height: 42px;
+  min-height: 44px;
   padding: 0 14px;
-  border-radius: 13px;
-  border: 1px solid rgba(194,202,214,0.78);
-  background-color: rgba(252,253,255,0.76);
-  color: #445062;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.62);
+  border-radius: 14px;
+  border: 1px solid rgba(186,198,214,0.76);
+  background-color: rgba(250,253,255,0.80);
+  color: #404A58;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.68), 0 1px 3px rgba(40,55,74,0.07);
 }
 
 .quick-toggle:hover,
 .quick-toggle:focus,
 .quick-menu-toggle:hover,
 .quick-menu-toggle:focus {
-  background-color: rgba(255,255,255,0.92);
-  border-color: rgba(182,193,208,0.92);
+  background-color: rgba(255,255,255,0.94);
+  border-color: rgba(174,188,208,0.92);
 }
 
 .quick-toggle:checked,
@@ -720,12 +718,12 @@
 .quick-menu-toggle:checked,
 .quick-menu-toggle:active {
   background-gradient-direction: vertical;
-  background-gradient-start: #3D86EA;
+  background-gradient-start: #3E88EE;
   background-gradient-end: #2A73D6;
   background-color: #2A73D6;
   border-color: rgba(42,115,214,0.94);
   color: #FFFFFF;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), 0 2px 8px rgba(42,115,214,0.28);
 }
 
 .quick-toggle .quick-toggle-title,
@@ -737,7 +735,7 @@
 .quick-menu-toggle .quick-toggle-subtitle,
 .quick-toggle .subtitle,
 .quick-menu-toggle .subtitle {
-  color: rgba(82,95,112,0.86);
+  color: rgba(74, 88, 108, 0.80);
 }
 
 .quick-toggle:checked .quick-toggle-subtitle,
@@ -750,7 +748,7 @@
 }
 
 .quick-menu-toggle .popup-menu-arrow {
-  color: rgba(76,88,106,0.78);
+  color: rgba(70,84,104,0.74);
 }
 
 .quick-toggle:checked .popup-menu-arrow,
@@ -762,7 +760,7 @@
 .quick-slider,
 .slider {
   -barlevel-height: 6px;
-  -barlevel-background-color: rgba(171,184,201,0.72);
+  -barlevel-background-color: rgba(162,176,196,0.68);
   -barlevel-active-background-color: #2A73D6;
   -barlevel-overdrive-color: #2A73D6;
   -slider-handle-radius: 9px;
@@ -771,12 +769,12 @@
 
 .quick-slider .icon-button,
 .quick-slider .button {
-  min-width: 38px;
-  min-height: 38px;
-  border-radius: 12px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 13px;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
-  background-color: rgba(196,204,215,0.78);
+  background-color: rgba(182, 196, 214, 0.78);
   margin: 8px 12px;
 }

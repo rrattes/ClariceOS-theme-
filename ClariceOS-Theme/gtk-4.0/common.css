@@ -53,6 +53,11 @@ preferenceswindow,
 window > box,
 dialog > box {
   border-radius: 14px;
+  box-shadow:
+    0 0 0 1px alpha(@subtle_border_color, 0.70),
+    0 2px 6px alpha(@shadow_color, 0.30),
+    0 8px 22px alpha(@shadow_color, 0.26),
+    0 28px 60px alpha(@shadow_color, 0.20);
 }
 
 headerbar,
@@ -65,13 +70,14 @@ toolbarview > headerbar,
 viewswitcherbar,
 tabbar,
 tabbox {
-  min-height: 42px;
-  padding: 4px 8px;
+  min-height: 44px;
+  padding: 5px 10px;
   border: none;
   border-bottom: 1px solid @headerbar_border_color;
   background-color: @headerbar_bg_color;
+  background-image: linear-gradient(to bottom, alpha(white, 0.05), alpha(white, 0.0));
   color: @headerbar_fg_color;
-  box-shadow: 0 2px 10px alpha(@shadow_color, 0.15);
+  box-shadow: inset 0 1px 0 alpha(white, 0.08), 0 1px 6px alpha(@shadow_color, 0.14);
 }
 
 headerbar:backdrop,
@@ -126,10 +132,10 @@ preferencesgroup button {
   padding: 8px 14px;
   border-radius: 10px;
   border: 1px solid @border_color;
-  background-image: none;
+  background-image: linear-gradient(to bottom, alpha(white, 0.06), alpha(black, 0.04));
   background-color: @card_bg_color;
   color: @window_fg_color;
-  box-shadow: 0 3px 10px alpha(@shadow_color, 0.22);
+  box-shadow: 0 1px 3px alpha(@shadow_color, 0.18), 0 3px 8px alpha(@shadow_color, 0.14);
 }
 
 button:hover,
@@ -142,6 +148,7 @@ splitbutton > button:hover,
 stackswitcher button:hover,
 viewswitcher button:hover {
   background-color: shade(@card_bg_color, 1.03);
+  background-image: linear-gradient(to bottom, alpha(white, 0.09), alpha(black, 0.02));
   color: @window_fg_color;
 }
 
@@ -157,6 +164,8 @@ stackswitcher button:checked,
 viewswitcher button:checked,
 .view switcher button:checked {
   background-color: shade(@card_bg_color, 0.96);
+  background-image: linear-gradient(to bottom, alpha(black, 0.05), alpha(white, 0.02));
+  box-shadow: inset 0 1px 3px alpha(@shadow_color, 0.22);
   color: @window_fg_color;
 }
 
@@ -193,10 +202,11 @@ button.pill.suggested-action:hover,
 suggested-action,
 splitbutton.suggested-action > button,
 splitbutton.suggested-action > menubutton > button {
-  border-color: alpha(@accent_bg_color, 0.25);
-  background-image: linear-gradient(to right, shade(@accent_bg_color, 1.06), shade(@accent_bg_color, 0.96));
+  border-color: alpha(@accent_bg_color, 0.30);
+  background-image: linear-gradient(to bottom, shade(@accent_bg_color, 1.10), shade(@accent_bg_color, 0.92));
   background-color: @accent_bg_color;
   color: @accent_fg_color;
+  box-shadow: 0 1px 4px alpha(@accent_bg_color, 0.30), 0 3px 10px alpha(@accent_bg_color, 0.22);
 }
 
 button.destructive-action,
@@ -355,7 +365,7 @@ statuspage > scrolledwindow > viewport {
   background-color: @card_bg_color;
   color: @card_fg_color;
   border: 1px solid @subtle_border_color;
-  box-shadow: 0 6px 20px alpha(@shadow_color, 0.14);
+  box-shadow: 0 1px 2px alpha(@shadow_color, 0.10), 0 4px 12px alpha(@shadow_color, 0.12);
 }
 
 preferencesgroup,
@@ -413,24 +423,29 @@ navigationview > navigation-sidebar,
 preferenceswindow row,
 splitview navigation-sidebar row,
 .overlay-split-view .sidebar-pane row {
-  min-height: 38px;
-  margin: 4px 8px;
+  min-height: 40px;
+  margin: 3px 8px;
   padding: 0 10px;
-  border-radius: 10px;
+  border-radius: 9px;
   background: transparent;
   color: @sidebar_fg_color;
 }
 
-.sidebar row:selected,
-.navigation-sidebar row:selected,
 .sidebar row:hover,
 .navigation-sidebar row:hover,
-splitview navigation-sidebar row:selected,
 splitview navigation-sidebar row:hover,
-.overlay-split-view .sidebar-pane row:selected,
 .overlay-split-view .sidebar-pane row:hover {
-  background-color: alpha(@accent_bg_color, 0.09);
+  background-color: alpha(@accent_bg_color, 0.07);
   color: @window_fg_color;
+}
+
+.sidebar row:selected,
+.navigation-sidebar row:selected,
+splitview navigation-sidebar row:selected,
+.overlay-split-view .sidebar-pane row:selected {
+  background-color: alpha(@accent_bg_color, 0.15);
+  color: @window_fg_color;
+  box-shadow: inset 0 0 0 1px alpha(@accent_bg_color, 0.20);
 }
 
 list,
@@ -596,8 +611,11 @@ scrollbar slider {
 }
 
 scrollbar slider {
-  min-width: 10px;
-  min-height: 10px;
+  min-width: 5px;
+  min-height: 5px;
+  border: none;
+  background-color: alpha(@window_fg_color, 0.26);
+  box-shadow: none;
 }
 
 scrollbar.vertical slider {
@@ -625,9 +643,9 @@ completion popover,
 autocomplete {
   background-color: @popover_bg_color;
   color: @popover_fg_color;
-  border-radius: 14px;
+  border-radius: 16px;
   border: 1px solid @subtle_border_color;
-  box-shadow: 0 14px 34px alpha(@shadow_color, 0.35);
+  box-shadow: 0 2px 6px alpha(@shadow_color, 0.14), 0 14px 36px alpha(@shadow_color, 0.28);
 }
 
 popover contents,
@@ -644,9 +662,9 @@ popover modelbutton,
 popover menuitem,
 completion row,
 emojichooser button {
-  min-height: 30px;
-  border-radius: 9px;
-  padding: 6px 10px;
+  min-height: 32px;
+  border-radius: 10px;
+  padding: 7px 12px;
 }
 
 menuitem:hover,

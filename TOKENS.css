@@ -1,27 +1,42 @@
 :root {
-  --light-bg: #F1F3F7;
-  --light-surface: #FBFBFC;
-  --light-surface-alt: #E8ECF3;
-  --light-border: #C9D0DB;
-  --light-text: #4A5260;
-  --light-text-soft: #7D8796;
+  /* Light mode palette */
+  --light-bg: #ECF0F5;
+  --light-surface: #F8FAFC;
+  --light-surface-alt: #E2E8F1;
+  --light-border: #C4CDD8;
+  --light-text: #404A58;
+  --light-text-soft: #7A8694;
+
+  /* Dark mode palette */
+  --dark-bg: #232B36;
+  --dark-bg-2: #1E2633;
+  --dark-bg-3: #293240;
+  --dark-bg-4: #2F3A48;
+  --dark-surface: #1C2330;
+  --dark-surface-alt: #1A2030;
+  --dark-border: #3D4D5F;
+  --dark-text: #ECF0F5;
+  --dark-text-soft: #CDD5E0;
+
+  /* Accent */
   --accent-blue: #2A73D6;
+  --accent-blue-hover: #3D85E8;
+  --accent-blue-active: #1E64C8;
   --accent-blue-soft: #AFC6E8;
   --accent-blue-lighter: #BCD3F3;
   --accent-blue-2: #4D99FD;
-  --dark-bg: #2E3642;
-  --dark-bg-2: #3D4758;
-  --dark-bg-3: #4A5667;
-  --dark-bg-4: #7A8693;
-  --dark-surface: #313947;
-  --dark-surface-alt: #232A35;
-  --dark-border: #5B6676;
-  --dark-text: #F4F6F8;
-  --dark-text-soft: #C7CDD6;
-  --knob-light: #F3F3F7;
-  --knob-dark: #364050;
-  --shadow-dark: rgba(23,29,38,0.35);
-  --shadow-light: rgba(52,63,79,0.16);
+
+  /* Knobs */
+  --knob-light: #F4F6FA;
+  --knob-dark: #3A4A5C;
+
+  /* Shadows */
+  --shadow-dark: rgba(10,14,21,0.48);
+  --shadow-dark-ambient: rgba(10,14,21,0.55);
+  --shadow-light: rgba(35,48,64,0.13);
+  --shadow-light-ambient: rgba(35,48,64,0.10);
+
+  /* Status */
   --success-green: #4CB244;
   --warning-yellow: #F2D56F;
   --warning-orange: #E69A36;
@@ -29,19 +44,33 @@
   --pink: #E06798;
   --magenta: #D04D9B;
   --gray-chip: #7E8794;
+
+  /* Surface system — rc8 layering */
+  --surface-dark-deep:     #1A2030;
+  --surface-dark-chrome:   #1E2633;
+  --surface-dark-window:   #232B36;
+  --surface-dark-card:     #293240;
+  --surface-dark-elevated: #2F3A48;
+  --surface-dark-floating: #354252;
+  --surface-light-deep:    #E4EAF2;
+  --surface-light-chrome:  #F0F4F8;
+  --surface-light-window:  #ECF0F5;
+  --surface-light-card:    #F8FAFC;
+  --surface-light-elevated:#FAFBFD;
+  --surface-light-floating:#FFFFFF;
 }
 
-/* Phase 6 accessibility tokens */
+/* Accessibility tokens */
 :root {
-  --clarice-link-light: #0F5FBF;
+  --clarice-link-light: #1060C0;
   --clarice-link-dark: #79B3FF;
-  --clarice-focus-light: #0F5FBF;
+  --clarice-focus-light: #1060C0;
   --clarice-focus-dark: #79B3FF;
-  --clarice-success-light: #2F7D2C;
+  --clarice-success-light: #2D7929;
   --clarice-success-dark: #7FD67B;
-  --clarice-warning-light: #8B5B10;
+  --clarice-warning-light: #895810;
   --clarice-warning-dark: #FFD166;
-  --clarice-error-light: #C43A33;
+  --clarice-error-light: #C03530;
   --clarice-error-dark: #FF8A84;
   --clarice-destructive-bg: #C43A33;
   --clarice-destructive-fg: #FFFFFF;
