@@ -1,4 +1,5 @@
 /* rc8 — refined dark palette with surface layering */
+/* GTK3-style @define-color for non-libadwaita GTK4 apps */
 @define-color window_bg_color #232B36;
 @define-color window_fg_color #ECF0F5;
 @define-color view_bg_color #1C2330;
@@ -39,5 +40,74 @@
 @define-color error_text_color #FF8A84;
 @define-color destructive_bg_color #C43A33;
 @define-color destructive_fg_color #FFFFFF;
+
+/* ── libadwaita CSS custom properties (GNOME 42+) ─────────────────────────────
+   ~/.config/gtk-4.0/gtk-dark.css loads AFTER built-in libadwaita CSS,
+   overriding Adwaita dark defaults for Nautilus, Files, etc.            */
+window,
+:root {
+  --accent-bg-color:          #2A73D6;
+  --accent-fg-color:          #FFFFFF;
+  --accent-color:             #6AB0FF;
+
+  --window-bg-color:          #232B36;
+  --window-fg-color:          #ECF0F5;
+
+  --view-bg-color:            #1C2330;
+  --view-fg-color:            #ECF0F5;
+
+  --headerbar-bg-color:       #1E2633;
+  --headerbar-fg-color:       #ECF0F5;
+  --headerbar-border-color:   rgba(236, 240, 245, 0.10);
+  --headerbar-backdrop-color: #1A2230;
+  --headerbar-shade-color:    rgba(10, 14, 21, 0.30);
+  --headerbar-darker-shade-color: rgba(10, 14, 21, 0.45);
+
+  --sidebar-bg-color:         #1E2633;
+  --sidebar-fg-color:         #CDD5E0;
+  --sidebar-backdrop-color:   #1A2230;
+  --sidebar-shade-color:      rgba(10, 14, 21, 0.22);
+  --sidebar-border-color:     rgba(236, 240, 245, 0.08);
+
+  --secondary-sidebar-bg-color:  #212C3A;
+  --secondary-sidebar-fg-color:  #CDD5E0;
+  --secondary-sidebar-backdrop-color: #1E2633;
+  --secondary-sidebar-shade-color: rgba(10, 14, 21, 0.20);
+  --secondary-sidebar-border-color: rgba(236, 240, 245, 0.07);
+
+  --card-bg-color:            #293240;
+  --card-fg-color:            #ECF0F5;
+  --card-shade-color:         rgba(10, 14, 21, 0.24);
+
+  --dialog-bg-color:          #2F3A48;
+  --dialog-fg-color:          #ECF0F5;
+
+  --popover-bg-color:         #2F3A48;
+  --popover-fg-color:         #ECF0F5;
+  --popover-shade-color:      rgba(10, 14, 21, 0.20);
+
+  --shade-color:              rgba(10, 14, 21, 0.32);
+  --scrollbar-outline-color:  rgba(0, 0, 0, 0.50);
+
+  --thumbnail-bg-color:       #293240;
+  --thumbnail-fg-color:       #ECF0F5;
+
+  --success-color:            #7FD67B;
+  --success-bg-color:         #4CB244;
+  --success-fg-color:         #FFFFFF;
+  --warning-color:            #FFD166;
+  --warning-bg-color:         #E69A36;
+  --warning-fg-color:         #1A1A00;
+  --error-color:              #FF8A84;
+  --error-bg-color:           #E5534B;
+  --error-fg-color:           #FFFFFF;
+
+  --destructive-color:        #FF8A84;
+  --destructive-bg-color:     #C43A33;
+  --destructive-fg-color:     #FFFFFF;
+
+  --link-color:               #79B3FF;
+  --link-visited-color:       #C09BFF;
+}
 
 @import url("common.css");
