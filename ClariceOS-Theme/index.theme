@@ -9,4 +9,4 @@ GtkTheme=ClariceOS-Theme
 MetacityTheme=Adwaita
 IconTheme=Adwaita
 CursorTheme=Adwaita
-ButtonLayout=appmenu:minimize,maximize,close
+ButtonLayout=close,minimize,maximize:
