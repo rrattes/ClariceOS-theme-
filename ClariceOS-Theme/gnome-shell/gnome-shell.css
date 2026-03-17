@@ -291,7 +291,7 @@
       color: rgba(200,212,228,0.60);
     }
 
-    .calendar-day-base {
+    .calendar .calendar-day-base {
       width: 34px;
       height: 34px;
       margin: 2px;
@@ -302,13 +302,13 @@
       background-color: transparent;
     }
 
-    .calendar-day-base:hover {
+    .calendar .calendar-day-base:hover {
       background-color: rgba(255,255,255,0.09);
       border-color: transparent;
     }
 
     /* Today: solid filled — prominent like macOS */
-    .calendar-today {
+    .calendar .calendar-today {
       background-color: #4490EE;
       color: #FFFFFF;
       font-weight: 700;
@@ -316,17 +316,17 @@
       box-shadow: 0 2px 6px rgba(68,144,238,0.40);
     }
 
-    .calendar-day-base:selected,
-    .calendar-day-base:active,
-    .calendar-day-with-events:selected {
+    .calendar .calendar-day-base:selected,
+    .calendar .calendar-day-base:active,
+    .calendar .calendar-day-with-events:selected {
       background-color: #2A73D6;
       color: #FFFFFF;
       border-color: rgba(42,115,214,0.90);
       box-shadow: 0 2px 8px rgba(42,115,214,0.38);
     }
 
-    .calendar-today:selected,
-    .calendar-today:active {
+    .calendar .calendar-today:selected,
+    .calendar .calendar-today:active {
       background-color: #2A73D6;
       color: #FFFFFF;
       border-color: rgba(42,115,214,0.90);
@@ -334,13 +334,13 @@
     }
 
     /* Other-month days: more faded */
-    .calendar-other-month-day,
-    .calendar-day-base.calendar-other-month-day {
+    .calendar .calendar-other-month-day,
+    .calendar .calendar-day-base.calendar-other-month-day {
       color: rgba(236,240,245,0.28);
       font-weight: 400;
     }
 
-    .calendar-day-with-events {
+    .calendar .calendar-day-with-events {
       border-color: rgba(68,144,238,0.55);
       box-shadow: 0 -2px 0 0 #4490EE inset;
     }
