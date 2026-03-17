@@ -61,11 +61,12 @@
       padding: 12px;
     }
 
-    .popup-menu-item,
+    .popup-menu .popup-menu-item,
     .popup-sub-menu .popup-menu-item,
     .candidate-popup-content .popup-menu-item,
-    .message-media-control,
-    .notification-button {
+    .message-list .message-media-control,
+    .notification-banner .notification-button,
+    .message-list .notification-button {
       min-height: 36px;
       padding: 0 12px;
       spacing: 8px;
@@ -85,12 +86,13 @@
       border: 1px solid transparent;
     }
 
-    .popup-menu-item:hover,
-    .popup-menu-item:focus,
+    .popup-menu .popup-menu-item:hover,
+    .popup-menu .popup-menu-item:focus,
     .popup-sub-menu .popup-menu-item:hover,
     .candidate-popup-content .popup-menu-item:hover,
-    .message-media-control:hover,
-    .notification-button:hover {
+    .message-list .message-media-control:hover,
+    .notification-banner .notification-button:hover,
+    .message-list .notification-button:hover {
       background-color: rgba(42,115,214,0.08);
       border-color: #C9D0DB;
     }
@@ -102,19 +104,21 @@
       border-radius: 9999px;
     }
 
-    .popup-menu-item:active,
-    .popup-menu-item:selected,
+    .popup-menu .popup-menu-item:active,
+    .popup-menu .popup-menu-item:selected,
     .popup-sub-menu .popup-menu-item:active,
-    .notification-button:active,
-    .message-media-control:active {
+    .notification-banner .notification-button:active,
+    .message-list .notification-button:active,
+    .message-list .message-media-control:active {
       background-color: rgba(42,115,214,0.14);
       border-color: rgba(42,115,214,0.40);
     }
 
-    .popup-menu-item:insensitive,
-    .popup-menu-item:disabled,
-    .message-media-control:insensitive,
-    .notification-button:insensitive {
+    .popup-menu .popup-menu-item:insensitive,
+    .popup-menu .popup-menu-item:disabled,
+    .message-list .message-media-control:insensitive,
+    .notification-banner .notification-button:insensitive,
+    .message-list .notification-button:insensitive {
       color: rgba(74,82,96,0.48);
       background-color: transparent;
       border-color: transparent;
@@ -138,11 +142,11 @@
     }
 
     .quick-settings .icon-button,
-    .quick-toggle,
-    .quick-menu-toggle,
-    .button,
-    .modal-dialog-button,
-    .notification-button {
+    .quick-settings .quick-toggle,
+    .quick-settings .quick-menu-toggle,
+    .modal-dialog .button,
+    .modal-dialog .modal-dialog-button,
+    .notification-banner .notification-button {
       min-height: 36px;
       padding: 6px 12px;
       border-radius: 10px;
@@ -152,42 +156,42 @@
     }
 
     .quick-settings .icon-button:hover,
-    .quick-toggle:hover,
-    .quick-toggle:focus,
-    .quick-menu-toggle:hover,
-    .quick-menu-toggle:focus,
-    .button:hover,
-    .button:focus,
-    .modal-dialog-button:hover,
-    .modal-dialog-button:focus,
-    .notification-button:hover {
+    .quick-settings .quick-toggle:hover,
+    .quick-settings .quick-toggle:focus,
+    .quick-settings .quick-menu-toggle:hover,
+    .quick-settings .quick-menu-toggle:focus,
+    .modal-dialog .button:hover,
+    .modal-dialog .button:focus,
+    .modal-dialog .modal-dialog-button:hover,
+    .modal-dialog .modal-dialog-button:focus,
+    .notification-banner .notification-button:hover {
       background-color: rgba(255,255,255,1.0);
     }
 
-    .quick-toggle:checked,
-    .quick-toggle:active,
-    .quick-menu-toggle:checked,
-    .quick-menu-toggle:active,
-    .button:checked,
-    .button:active,
-    .modal-dialog-button:checked,
-    .modal-dialog-button:active,
-    .notification-button:active,
-    .notification-button:checked {
+    .quick-settings .quick-toggle:checked,
+    .quick-settings .quick-toggle:active,
+    .quick-settings .quick-menu-toggle:checked,
+    .quick-settings .quick-menu-toggle:active,
+    .modal-dialog .button:checked,
+    .modal-dialog .button:active,
+    .modal-dialog .modal-dialog-button:checked,
+    .modal-dialog .modal-dialog-button:active,
+    .notification-banner .notification-button:active,
+    .notification-banner .notification-button:checked {
       background-color: #2A73D6;
       color: #FFFFFF;
       border-color: rgba(42,115,214,0.86);
     }
 
-    .quick-toggle .quick-toggle-title,
-    .quick-menu-toggle .quick-toggle-title,
-    .quick-toggle .quick-toggle-subtitle,
-    .quick-menu-toggle .quick-toggle-subtitle,
-    .quick-toggle .subtitle,
-    .quick-menu-toggle .subtitle,
-    .quick-menu-toggle .popup-menu-arrow,
-    .quick-toggle .system-status-icon,
-    .quick-menu-toggle .system-status-icon {
+    .quick-settings .quick-toggle .quick-toggle-title,
+    .quick-settings .quick-menu-toggle .quick-toggle-title,
+    .quick-settings .quick-toggle .quick-toggle-subtitle,
+    .quick-settings .quick-menu-toggle .quick-toggle-subtitle,
+    .quick-settings .quick-toggle .subtitle,
+    .quick-settings .quick-menu-toggle .subtitle,
+    .quick-settings .quick-menu-toggle .popup-menu-arrow,
+    .quick-settings .quick-toggle .system-status-icon,
+    .quick-settings .quick-menu-toggle .system-status-icon {
       color: inherit;
     }
 
@@ -208,7 +212,9 @@
       -slider-handle-radius: 10px;
     }
 
-    .toggle-switch {
+    .quick-settings .toggle-switch,
+    .popup-menu .toggle-switch,
+    .modal-dialog .toggle-switch {
       width: 52px;
       height: 30px;
       border-radius: 999px;
@@ -218,7 +224,9 @@
       box-shadow: none;
     }
 
-    .toggle-switch:checked {
+    .quick-settings .toggle-switch:checked,
+    .popup-menu .toggle-switch:checked,
+    .modal-dialog .toggle-switch:checked {
       background-color: #2A73D6;
       border-color: rgba(42,115,214,0.86);
     }
@@ -231,36 +239,38 @@
       background-color: rgba(74,82,96,0.06);
     }
 
-    .check-box:checked StBin {
+    .quick-settings .check-box:checked StBin,
+    .popup-menu .check-box:checked StBin,
+    .modal-dialog .check-box:checked StBin {
       background-color: #2A73D6;
       border-color: rgba(42,115,214,0.86);
     }
 
-    .calendar-month-header,
-    .datemenu-today-button,
-    .events-button,
-    .world-clocks-button,
-    .weather-button,
-    .events-section-title,
-    .world-clocks-header,
-    .weather-header {
+    .datemenu-popover .calendar-month-header,
+    .datemenu-popover .datemenu-today-button,
+    .datemenu-popover .events-button,
+    .datemenu-popover .world-clocks-button,
+    .datemenu-popover .weather-button,
+    .datemenu-popover .events-section-title,
+    .datemenu-popover .world-clocks-header,
+    .datemenu-popover .weather-header {
       color: #4A5260;
     }
 
-    .datemenu-today-button,
-    .events-button,
-    .world-clocks-button,
-    .weather-button {
+    .datemenu-popover .datemenu-today-button,
+    .datemenu-popover .events-button,
+    .datemenu-popover .world-clocks-button,
+    .datemenu-popover .weather-button {
       border-radius: 12px;
       border: 1px solid transparent;
       padding: 8px 10px;
       background-color: transparent;
     }
 
-    .datemenu-today-button:hover,
-    .events-button:hover,
-    .world-clocks-button:hover,
-    .weather-button:hover {
+    .datemenu-popover .datemenu-today-button:hover,
+    .datemenu-popover .events-button:hover,
+    .datemenu-popover .world-clocks-button:hover,
+    .datemenu-popover .weather-button:hover {
       background-color: rgba(42,115,214,0.08);
       border-color: #C9D0DB;
     }
@@ -356,8 +366,9 @@
       padding: 6px;
     }
 
-    .message,
-    .notification {
+    .message-list .message,
+    .message-list .notification,
+    .notification-banner.notification-banner {
       margin: 0;
       padding: 12px;
       border-radius: 14px;
@@ -367,27 +378,27 @@
       box-shadow: 0 1px 4px rgba(35,48,64,0.08);
     }
 
-    .message:hover,
-    .notification:hover {
+    .message-list .message:hover,
+    .message-list .notification:hover {
       background-color: rgba(252, 254, 255, 0.98);
     }
 
-    .message-title,
-    .message-source-title,
-    .notification-title {
+    .message-list .message-title,
+    .message-list .message-source-title,
+    .notification-banner .notification-title {
       color: #4A5260;
       font-weight: 700;
     }
 
-    .message-secondary-bin,
-    .message-body,
-    .notification-body,
-    .message-source-time {
+    .message-list .message-secondary-bin,
+    .message-list .message-body,
+    .notification-banner .notification-body,
+    .message-list .message-source-time {
       color: #7D8796;
     }
 
-    .message-media-control,
-    .message-close-button,
+    .message-list .message-media-control,
+    .message-list .message-close-button,
     .notification-banner .notification-button {
       border-radius: 10px;
       border: 1px solid #C9D0DB;
@@ -395,22 +406,22 @@
       color: #4A5260;
     }
 
-    .message-close-button:hover,
+    .message-list .message-close-button:hover,
     .notification-banner .notification-button:hover {
       background-color: rgba(42,115,214,0.08);
     }
 
     .notification-banner.critical,
-    .message.critical {
+    .message-list .message.critical {
       border-color: #E5534B;
     }
 
     .notification-banner.critical .notification-button,
-    .message.critical .message-media-control {
+    .message-list .message.critical .message-media-control {
       border-color: rgba(229,83,75,0.44);
     }
 
-    .osd-window {
+    .osd-window.osd-window {
       padding: 20px 24px;
       border-radius: 20px;
       background-color: rgba(245, 249, 255, 0.95);
@@ -419,7 +430,7 @@
     }
 
     .osd-window .level,
-    .level {
+    .osd-window .level.level {
       -barlevel-height: 6px;
       -barlevel-background-color: rgba(168,184,204,0.68);
       -barlevel-active-background-color: #2A73D6;
