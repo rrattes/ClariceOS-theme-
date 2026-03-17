@@ -5,59 +5,11 @@
      */
 
     stage {
-      color: #F4F6F8;
+      color: #ECF0F5;
     }
 
     .background-menu {
       -boxpointer-gap: 10px;
-    }
-
-    #panel {
-      height: 32px;
-      background: transparent;
-      box-shadow: none;
-    }
-
-
-#panel .panel-button,
-#panel .panel-button:hover,
-#panel .panel-button:active,
-#panel .panel-button:overview,
-#panel .panel-button:focus,
-#panel .panel-button.clock-display {
-  margin: 4px 0;
-  padding: 0 10px;
-  border: 1px solid rgba(76, 86, 103, 0.95);
-  border-radius: 12px;
-  background-gradient-direction: horizontal;
-  background-gradient-start: #2E3642;
-  background-gradient-end: #202733;
-  color: #F4F6F8;
-  box-shadow: 0 4px 10px rgba(23,29,38,0.35);
-}
-
-#panel .panel-button:hover,
-#panel .panel-button:focus {
-  background-gradient-start: #374152;
-  background-gradient-end: #28303B;
-}
-
-#panel .panel-button:active,
-#panel .panel-button:checked,
-#panel .panel-button:overview {
-  background-gradient-start: #2A73D6;
-  background-gradient-end: #1D5DB6;
-  border-color: rgba(42,115,214,0.86);
-  color: #FFFFFF;
-}
-
-
-    #panel .panel-button .system-status-icon,
-    #panel .panel-button .panel-status-menu-box,
-    #panel .panel-button .popup-menu-arrow,
-    #panel .panel-button .clock {
-      color: inherit;
-      icon-shadow: none;
     }
 
     .popup-menu-boxpointer,
@@ -73,19 +25,19 @@
     .app-folder-dialog,
     .datemenu-popover,
     .screen-shield-notifications-container {
-      color: #F4F6F8;
+      color: #ECF0F5;
       background-gradient-direction: none;
-      background-color: rgba(42,49,61,0.98);
-      border: 1px solid #5B6676;
-      border-radius: 16px;
-      box-shadow: 0 18px 36px rgba(23,29,38,0.42);
+      background-color: rgba(30, 38, 50, 0.98);
+      border: 1px solid rgba(62, 78, 98, 0.80);
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(10,14,21,0.28), 0 20px 44px rgba(10,14,21,0.50);
     }
 
     .popup-menu-boxpointer,
     .candidate-popup-boxpointer {
-      -arrow-border-radius: 16px;
-      -arrow-background-color: rgba(42,49,61,0.98);
-      -arrow-border-color: #5B6676;
+      -arrow-border-radius: 18px;
+      -arrow-background-color: rgba(30, 38, 50, 0.98);
+      -arrow-border-color: rgba(62, 78, 98, 0.80);
       -arrow-base: 26px;
       -arrow-rise: 10px;
     }
@@ -320,34 +272,49 @@
       width: 34px;
       height: 34px;
       margin: 2px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      color: #F4F6F8;
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      color: #ECF0F5;
       background-color: transparent;
     }
 
     .calendar-day-base:hover {
-      background-color: rgba(255,255,255,0.06);
-      border-color: #5B6676;
+      background-color: rgba(255,255,255,0.08);
+      border-color: rgba(100,120,145,0.55);
+    }
+
+    .calendar-today {
+      border-color: rgba(42,115,214,0.70);
+      color: #79B3FF;
+      font-weight: 700;
+      background-color: rgba(42,115,214,0.12);
     }
 
     .calendar-day-base:selected,
     .calendar-day-base:active,
-    .calendar-today,
     .calendar-day-with-events:selected {
       background-color: #2A73D6;
       color: #FFFFFF;
-      border-color: rgba(42,115,214,0.86);
+      border-color: rgba(42,115,214,0.90);
+      box-shadow: 0 2px 8px rgba(42,115,214,0.38);
+    }
+
+    .calendar-today:selected,
+    .calendar-today:active {
+      background-color: #2A73D6;
+      color: #FFFFFF;
+      border-color: rgba(42,115,214,0.90);
+      box-shadow: 0 2px 8px rgba(42,115,214,0.38);
     }
 
     .calendar-other-month-day,
     .calendar-day-base.calendar-other-month-day {
-      color: rgba(244,246,248,0.48);
+      color: rgba(236,240,245,0.35);
     }
 
     .calendar-day-with-events {
-      border-color: rgba(42,115,214,0.40);
-      box-shadow: inset 0 -2px 0 0 #2A73D6;
+      border-color: rgba(42,115,214,0.50);
+      box-shadow: 0 -2px 0 0 #2A73D6 inset;
     }
 
     .events-button .events-day-time,
@@ -364,17 +331,17 @@
     .message,
     .notification {
       margin: 0;
-      padding: 10px;
+      padding: 12px;
       border-radius: 14px;
-      border: 1px solid #5B6676;
-      background-color: rgba(46,54,66,0.98);
-      color: #F4F6F8;
-      box-shadow: none;
+      border: 1px solid rgba(62, 78, 98, 0.75);
+      background-color: rgba(36, 46, 60, 0.98);
+      color: #ECF0F5;
+      box-shadow: 0 1px 4px rgba(10,14,21,0.20);
     }
 
     .message:hover,
     .notification:hover {
-      background-color: rgba(42,49,61,0.98);
+      background-color: rgba(40, 50, 66, 0.98);
     }
 
     .message-title,
@@ -416,13 +383,17 @@
     }
 
     .osd-window {
-      padding: 16px;
+      padding: 20px 24px;
+      border-radius: 20px;
+      background-color: rgba(20, 26, 36, 0.94);
+      border: 1px solid rgba(65, 82, 104, 0.68);
+      box-shadow: 0 2px 10px rgba(10,14,21,0.28), 0 20px 46px rgba(10,14,21,0.46);
     }
 
     .osd-window .level,
     .level {
-      -barlevel-height: 8px;
-      -barlevel-background-color: #657387;
+      -barlevel-height: 6px;
+      -barlevel-background-color: rgba(88,108,132,0.65);
       -barlevel-active-background-color: #2A73D6;
       border-radius: 999px;
     }
@@ -471,21 +442,48 @@
       border-color: rgba(229,83,75,0.55);
     }
 
+    .modal-dialog-linked-button.destructive-action:hover,
+    .button.destructive-action:hover {
+      background-color: #F0645C;
+      border-color: rgba(229,83,75,0.72);
+    }
+
     .button.suggested-action,
     .modal-dialog-linked-button.suggested-action {
       background-color: #2A73D6;
       color: #FFFFFF;
       border-color: rgba(42,115,214,0.86);
+      box-shadow: 0 2px 8px rgba(42,115,214,0.30);
     }
+
+    .button.suggested-action:hover,
+    .modal-dialog-linked-button.suggested-action:hover {
+      background-color: #3D85E8;
+      box-shadow: 0 3px 12px rgba(42,115,214,0.40);
+    }
+
+/* Transitions for interactive shell elements */
+.panel-button,
+.popup-menu-item,
+.quick-toggle,
+.quick-menu-toggle,
+.quick-settings .icon-button,
+.calendar-day-base,
+.modal-dialog-linked-button,
+.button,
+.toggle-switch,
+.check-box StBin {
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, color 150ms ease;
+}
 
     #dash .dash-background,
     .workspace-switcher-container,
     .search-section-content,
     .app-folder-dialog .folder-name-container {
-      background-color: rgba(42,49,61,0.98);
-      border: 1px solid #5B6676;
-      border-radius: 18px;
-      box-shadow: 0 12px 24px rgba(23,29,38,0.35);
+      background-color: rgba(22, 28, 38, 0.96);
+      border: 1px solid rgba(60, 76, 96, 0.75);
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(10,14,21,0.24), 0 14px 30px rgba(10,14,21,0.38);
     }
 
     .dash-item-container > StButton,
@@ -592,14 +590,14 @@
 
 
 
-/* RC6 macOS-inspired continuous top bar - dark */
+/* RC8 — refined top bar — dark */
 #panel {
   height: 34px;
   background-gradient-direction: none;
-  background-color: rgba(28, 33, 41, 0.82);
-  color: #F4F6F8;
+  background-color: rgba(18, 23, 31, 0.92);
+  color: #ECF0F5;
   border: none;
-  box-shadow: inset 0 -1px rgba(92, 103, 121, 0.45);
+  box-shadow: inset 0 -1px rgba(60, 78, 98, 0.50);
 }
 
 #panel .panel-button,
@@ -616,19 +614,19 @@
   background-gradient-direction: none;
   background-color: transparent;
   box-shadow: none;
-  color: #F4F6F8;
+  color: rgba(236, 240, 245, 0.88);
 }
 
 #panel .panel-button:hover,
 #panel .panel-button:focus {
-  background-color: rgba(255, 255, 255, 0.10);
-  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.09);
+  color: #ECF0F5;
 }
 
 #panel .panel-button:active,
 #panel .panel-button:checked,
 #panel .panel-button:overview {
-  background-color: rgba(83, 148, 255, 0.20);
+  background-color: rgba(70, 130, 240, 0.22);
   color: #FFFFFF;
 }
 
@@ -638,22 +636,23 @@
   border: none;
   border-radius: 10px;
   background-gradient-direction: none;
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #F8FAFC;
-  box-shadow: inset 0 1px rgba(255,255,255,0.08), 0 1px 2px rgba(0, 0, 0, 0.22);
+  background-color: rgba(255, 255, 255, 0.07);
+  color: #ECF0F5;
+  box-shadow: inset 0 1px rgba(255,255,255,0.07), inset 0 0 0 1px rgba(255,255,255,0.06);
   font-weight: 600;
 }
 
 #panel .panel-button.clock-display:hover,
 #panel .panel-button.clock-display:focus {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.11);
 }
 
 #panel .panel-button.clock-display:active,
 #panel .panel-button.clock-display:checked,
 #panel .panel-button.clock-display:overview {
-  background-color: rgba(83, 148, 255, 0.24);
+  background-color: rgba(70, 130, 240, 0.24);
   color: #FFFFFF;
+  box-shadow: inset 0 1px rgba(255,255,255,0.10);
 }
 
 #panel .panel-button .system-status-icon,
@@ -666,63 +665,61 @@
 
 
 
-/* RC7 — Quick Settings / control box refinement (dark)
- * Goal: increase hierarchy, reduce flatness, improve tile quality.
- */
+/* RC8 — Quick Settings / control box refined depth (dark) */
 .quick-settings {
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(103,116,134,0.62);
-  background-color: rgba(34,41,52,0.97);
-  box-shadow: 0 22px 48px rgba(18,23,31,0.48);
+  padding: 12px;
+  border-radius: 22px;
+  border: 1px solid rgba(72, 90, 112, 0.58);
+  background-color: rgba(22, 28, 38, 0.97);
+  box-shadow: 0 2px 8px rgba(10,14,21,0.30), 0 26px 56px rgba(10,14,21,0.54);
 }
 
 .quick-settings-grid {
-  spacing: 12px;
-  padding: 10px;
+  spacing: 10px;
+  padding: 8px;
 }
 
 .quick-settings .icon-button {
-  min-width: 38px;
-  min-height: 38px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
-  border-radius: 12px;
-  border: 1px solid rgba(94,108,126,0.72);
+  border-radius: 13px;
+  border: 1px solid rgba(72, 90, 114, 0.68);
   background-gradient-direction: vertical;
-  background-gradient-start: #343D4B;
-  background-gradient-end: #2A313D;
-  background-color: #2D3542;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+  background-gradient-start: #2E3A4C;
+  background-gradient-end: #222E3E;
+  background-color: #283444;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
 }
 
 .quick-settings .icon-button:hover,
 .quick-settings .icon-button:focus {
-  background-gradient-start: #3A4454;
-  background-gradient-end: #303947;
-  border-color: rgba(109,123,142,0.86);
+  background-gradient-start: #354452;
+  background-gradient-end: #293546;
+  border-color: rgba(90,110,134,0.84);
 }
 
 .quick-toggle,
 .quick-menu-toggle {
-  min-height: 42px;
+  min-height: 44px;
   padding: 0 14px;
-  border-radius: 13px;
-  border: 1px solid rgba(92,105,122,0.70);
+  border-radius: 14px;
+  border: 1px solid rgba(70, 88, 110, 0.65);
   background-gradient-direction: vertical;
-  background-gradient-start: #313946;
-  background-gradient-end: #272E3A;
-  background-color: #2C3440;
-  color: #F4F6F8;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  background-gradient-start: #2A3648;
+  background-gradient-end: #1F2C3C;
+  background-color: #243040;
+  color: #ECF0F5;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .quick-toggle:hover,
 .quick-toggle:focus,
 .quick-menu-toggle:hover,
 .quick-menu-toggle:focus {
-  background-gradient-start: #384153;
-  background-gradient-end: #2E3745;
-  border-color: rgba(107,120,138,0.84);
+  background-gradient-start: #324050;
+  background-gradient-end: #273544;
+  border-color: rgba(86,106,130,0.82);
 }
 
 .quick-toggle:checked,
@@ -730,12 +727,12 @@
 .quick-menu-toggle:checked,
 .quick-menu-toggle:active {
   background-gradient-direction: vertical;
-  background-gradient-start: #3C87EC;
+  background-gradient-start: #3E8AF0;
   background-gradient-end: #2A73D6;
   background-color: #2A73D6;
-  border-color: rgba(55,130,236,0.96);
+  border-color: rgba(50,128,240,0.96);
   color: #FFFFFF;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 2px 8px rgba(42,115,214,0.32);
 }
 
 .quick-toggle .quick-toggle-title,
@@ -747,7 +744,7 @@
 .quick-menu-toggle .quick-toggle-subtitle,
 .quick-toggle .subtitle,
 .quick-menu-toggle .subtitle {
-  color: rgba(211,219,229,0.78);
+  color: rgba(200,212,228,0.74);
 }
 
 .quick-toggle:checked .quick-toggle-subtitle,
@@ -760,7 +757,7 @@
 }
 
 .quick-menu-toggle .popup-menu-arrow {
-  color: rgba(228,233,240,0.74);
+  color: rgba(210,222,236,0.70);
 }
 
 .quick-toggle:checked .popup-menu-arrow,
@@ -772,7 +769,7 @@
 .quick-slider,
 .slider {
   -barlevel-height: 6px;
-  -barlevel-background-color: rgba(111,124,142,0.70);
+  -barlevel-background-color: rgba(90,108,130,0.65);
   -barlevel-active-background-color: #2A73D6;
   -barlevel-overdrive-color: #2A73D6;
   -slider-handle-radius: 9px;
@@ -781,12 +778,12 @@
 
 .quick-slider .icon-button,
 .quick-slider .button {
-  min-width: 38px;
-  min-height: 38px;
-  border-radius: 12px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 13px;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
-  background-color: rgba(92,104,121,0.78);
+  background-color: rgba(72, 90, 112, 0.72);
   margin: 8px 12px;
 }
