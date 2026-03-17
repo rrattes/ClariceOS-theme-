@@ -5,56 +5,11 @@
      */
 
     stage {
-      color: #4A5260;
+      color: #404A58;
     }
 
     .background-menu {
       -boxpointer-gap: 10px;
-    }
-
-    #panel {
-      height: 32px;
-      background: transparent;
-      box-shadow: none;
-    }
-
-
-#panel .panel-button,
-#panel .panel-button:hover,
-#panel .panel-button:active,
-#panel .panel-button:overview,
-#panel .panel-button:focus,
-#panel .panel-button.clock-display {
-  margin: 4px 0;
-  padding: 0 10px;
-  border: 1px solid rgba(201,208,219,0.98);
-  border-radius: 12px;
-  background-gradient-direction: none;
-  background-color: rgba(251,251,252,0.96);
-  color: #4A5260;
-  box-shadow: 0 3px 10px rgba(52,63,79,0.16);
-}
-
-#panel .panel-button:hover,
-#panel .panel-button:focus {
-  background-color: rgba(255,255,255,1.0);
-}
-
-#panel .panel-button:active,
-#panel .panel-button:checked,
-#panel .panel-button:overview {
-  background-color: #2A73D6;
-  border-color: rgba(42,115,214,0.86);
-  color: #FFFFFF;
-}
-
-
-    #panel .panel-button .system-status-icon,
-    #panel .panel-button .panel-status-menu-box,
-    #panel .panel-button .popup-menu-arrow,
-    #panel .panel-button .clock {
-      color: inherit;
-      icon-shadow: none;
     }
 
     .popup-menu-boxpointer,
@@ -317,34 +272,49 @@
       width: 34px;
       height: 34px;
       margin: 2px;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      color: #4A5260;
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      color: #404A58;
       background-color: transparent;
     }
 
     .calendar-day-base:hover {
       background-color: rgba(42,115,214,0.08);
-      border-color: #C9D0DB;
+      border-color: rgba(180,196,216,0.70);
+    }
+
+    .calendar-today {
+      border-color: rgba(42,115,214,0.65);
+      color: #1060C0;
+      font-weight: 700;
+      background-color: rgba(42,115,214,0.09);
     }
 
     .calendar-day-base:selected,
     .calendar-day-base:active,
-    .calendar-today,
     .calendar-day-with-events:selected {
       background-color: #2A73D6;
       color: #FFFFFF;
-      border-color: rgba(42,115,214,0.86);
+      border-color: rgba(42,115,214,0.90);
+      box-shadow: 0 2px 8px rgba(42,115,214,0.28);
+    }
+
+    .calendar-today:selected,
+    .calendar-today:active {
+      background-color: #2A73D6;
+      color: #FFFFFF;
+      border-color: rgba(42,115,214,0.90);
+      box-shadow: 0 2px 8px rgba(42,115,214,0.28);
     }
 
     .calendar-other-month-day,
     .calendar-day-base.calendar-other-month-day {
-      color: rgba(74,82,96,0.48);
+      color: rgba(64,74,88,0.40);
     }
 
     .calendar-day-with-events {
-      border-color: rgba(42,115,214,0.40);
-      box-shadow: inset 0 -2px 0 0 #2A73D6;
+      border-color: rgba(42,115,214,0.45);
+      box-shadow: 0 -2px 0 0 #2A73D6 inset;
     }
 
     .events-button .events-day-time,
@@ -413,13 +383,17 @@
     }
 
     .osd-window {
-      padding: 16px;
+      padding: 20px 24px;
+      border-radius: 20px;
+      background-color: rgba(245, 249, 255, 0.95);
+      border: 1px solid rgba(178, 194, 214, 0.84);
+      box-shadow: 0 2px 10px rgba(35,48,64,0.10), 0 20px 46px rgba(35,48,64,0.18);
     }
 
     .osd-window .level,
     .level {
-      -barlevel-height: 8px;
-      -barlevel-background-color: #BAC4D3;
+      -barlevel-height: 6px;
+      -barlevel-background-color: rgba(168,184,204,0.68);
       -barlevel-active-background-color: #2A73D6;
       border-radius: 999px;
     }
@@ -468,12 +442,39 @@
       border-color: rgba(229,83,75,0.55);
     }
 
+    .modal-dialog-linked-button.destructive-action:hover,
+    .button.destructive-action:hover {
+      background-color: #F0645C;
+      border-color: rgba(229,83,75,0.72);
+    }
+
     .button.suggested-action,
     .modal-dialog-linked-button.suggested-action {
       background-color: #2A73D6;
       color: #FFFFFF;
       border-color: rgba(42,115,214,0.86);
+      box-shadow: 0 2px 8px rgba(42,115,214,0.24);
     }
+
+    .button.suggested-action:hover,
+    .modal-dialog-linked-button.suggested-action:hover {
+      background-color: #3D85E8;
+      box-shadow: 0 3px 12px rgba(42,115,214,0.34);
+    }
+
+/* Transitions for interactive shell elements */
+.panel-button,
+.popup-menu-item,
+.quick-toggle,
+.quick-menu-toggle,
+.quick-settings .icon-button,
+.calendar-day-base,
+.modal-dialog-linked-button,
+.button,
+.toggle-switch,
+.check-box StBin {
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, color 150ms ease;
+}
 
     #dash .dash-background,
     .workspace-switcher-container,
