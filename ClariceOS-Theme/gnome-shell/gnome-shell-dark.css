@@ -65,9 +65,7 @@
     .popup-sub-menu .popup-menu-item,
     .candidate-popup-content .popup-menu-item,
     .message-media-control,
-    .notification-button,
-    .calendar .calendar-change-month-back,
-    .calendar .calendar-change-month-forward {
+    .notification-button {
       min-height: 36px;
       padding: 0 12px;
       spacing: 8px;
@@ -77,16 +75,31 @@
       border: 1px solid transparent;
     }
 
+    .calendar .calendar-change-month-back,
+    .calendar .calendar-change-month-forward {
+      min-height: 28px;
+      padding: 0 8px;
+      border-radius: 9999px;
+      color: #ECF0F5;
+      background-color: transparent;
+      border: 1px solid transparent;
+    }
+
     .popup-menu-item:hover,
     .popup-menu-item:focus,
     .popup-sub-menu .popup-menu-item:hover,
     .candidate-popup-content .popup-menu-item:hover,
     .message-media-control:hover,
-    .notification-button:hover,
-    .calendar .calendar-change-month-back:hover,
-    .calendar .calendar-change-month-forward:hover {
+    .notification-button:hover {
       background-color: rgba(255,255,255,0.06);
       border-color: #5B6676;
+    }
+
+    .calendar .calendar-change-month-back:hover,
+    .calendar .calendar-change-month-forward:hover {
+      background-color: rgba(255,255,255,0.08);
+      border-color: transparent;
+      border-radius: 9999px;
     }
 
     .popup-menu-item:active,
@@ -254,18 +267,22 @@
 
     .calendar {
       padding: 6px;
+      background-color: rgba(255,255,255,0.04);
+      border-radius: 14px;
     }
 
     .calendar-month-header {
       spacing: 8px;
       padding-bottom: 8px;
       font-weight: 700;
+      color: #ECF0F5;
     }
 
     .calendar .calendar-day-heading {
-      font-size: 0.92em;
-      font-weight: 600;
+      font-size: 0.80em;
+      font-weight: 700;
       padding: 4px 0 6px;
+      color: rgba(200,212,228,0.60);
     }
 
     .calendar-day-base {
@@ -275,19 +292,22 @@
       border-radius: 9999px;
       border: 2px solid transparent;
       color: #ECF0F5;
+      font-weight: 500;
       background-color: transparent;
     }
 
     .calendar-day-base:hover {
-      background-color: rgba(255,255,255,0.08);
-      border-color: rgba(100,120,145,0.55);
+      background-color: rgba(255,255,255,0.09);
+      border-color: transparent;
     }
 
+    /* Today: solid filled — prominent like macOS */
     .calendar-today {
-      border-color: rgba(42,115,214,0.70);
-      color: #79B3FF;
+      background-color: #4490EE;
+      color: #FFFFFF;
       font-weight: 700;
-      background-color: rgba(42,115,214,0.12);
+      border-color: #4490EE;
+      box-shadow: 0 2px 6px rgba(68,144,238,0.40);
     }
 
     .calendar-day-base:selected,
@@ -307,14 +327,16 @@
       box-shadow: 0 2px 8px rgba(42,115,214,0.38);
     }
 
+    /* Other-month days: more faded */
     .calendar-other-month-day,
     .calendar-day-base.calendar-other-month-day {
-      color: rgba(236,240,245,0.35);
+      color: rgba(236,240,245,0.28);
+      font-weight: 400;
     }
 
     .calendar-day-with-events {
-      border-color: rgba(42,115,214,0.50);
-      box-shadow: 0 -2px 0 0 #2A73D6 inset;
+      border-color: rgba(68,144,238,0.55);
+      box-shadow: 0 -2px 0 0 #4490EE inset;
     }
 
     .events-button .events-day-time,
