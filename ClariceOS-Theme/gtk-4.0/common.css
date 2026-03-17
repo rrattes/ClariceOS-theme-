@@ -111,6 +111,16 @@ windowcontrols > button {
   box-shadow: none;
 }
 
+/* Force titlebutton dimensions — overrides generic headerbar/windowcontrols min-height */
+headerbar button.titlebutton,
+.titlebar button.titlebutton,
+windowcontrols > button.titlebutton,
+windowcontrols > button {
+  min-width: 13px;
+  min-height: 13px;
+  padding: 0;
+}
+
 button.titlebutton.close,
 windowcontrols > button.close {
   background-color: #FF5F57;
@@ -714,6 +724,15 @@ menu contents,
 emojichooser contents,
 completion > popover > contents {
   padding: 10px;
+}
+
+/* GTK4 popover arrow — match popover background/border so it blends cleanly */
+popover > arrow,
+popover.menu > arrow,
+popover.combo > arrow,
+popover.background > arrow {
+  background-color: @popover_bg_color;
+  border-color: @subtle_border_color;
 }
 
 menuitem,

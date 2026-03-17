@@ -65,6 +65,14 @@ button.titlebutton {
   box-shadow: none;
 }
 
+/* Force titlebutton dimensions — overrides generic headerbar button min-height */
+headerbar button.titlebutton,
+.titlebar button.titlebutton {
+  min-width: 13px;
+  min-height: 13px;
+  padding: 0;
+}
+
 button.titlebutton.close {
   background-color: #FF5F57;
   border-color: #E0443E;
@@ -832,6 +840,18 @@ menu frame,
 .popup decoration,
 csd popover.background {
   border-radius: 14px;
+}
+
+/* GTK4 popover arrow — match popover background/border so it blends cleanly */
+popover > arrow {
+  background-color: @popover_bg_color;
+  border-color: @subtle_border_color;
+}
+
+popover.menu > arrow,
+popover.combo > arrow {
+  background-color: @popover_bg_color;
+  border-color: @subtle_border_color;
 }
 
 combobox > box arrow,
