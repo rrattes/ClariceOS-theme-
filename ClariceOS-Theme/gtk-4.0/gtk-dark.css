@@ -44,6 +44,11 @@
 /* ── libadwaita CSS custom properties (GNOME 42+) ─────────────────────────────
    ~/.config/gtk-4.0/gtk-dark.css loads AFTER built-in libadwaita CSS,
    overriding Adwaita dark defaults for Nautilus, Files, etc.            */
+/* Repeat with higher-specificity selectors to beat AdwStyleManager dynamic provider */
+window.background,
+window.csd,
+window:not(.solid-csd),
+:root,
 window,
 :root {
   --accent-bg-color:          #2A73D6;

@@ -45,6 +45,11 @@
    ~/.config/gtk-4.0/gtk.css loads AFTER the app's built-in libadwaita CSS,
    so these custom properties override Adwaita defaults for Nautilus, Files,
    Calculator, Calendar and all other libadwaita-based apps.              */
+/* Repeat with higher-specificity selectors to beat AdwStyleManager dynamic provider */
+window.background,
+window.csd,
+window:not(.solid-csd),
+:root,
 window,
 :root {
   --accent-bg-color:          #2A73D6;
