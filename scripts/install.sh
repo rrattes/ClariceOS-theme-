@@ -31,12 +31,17 @@ section() { echo; echo "▸ $*"; }
 section "Installing theme files"
 mkdir -p "${HOME}/.themes"
 rm -rf "$THEME_DEST"
-cp -a "$THEME_SRC" "$THEME_DEST"
+# Use cp -r (not -a) so files get current timestamps — GNOME Shell uses mtime
+# to detect CSS changes and may skip reload if timestamps look stale.
+cp -r "$THEME_SRC" "$THEME_DEST"
+# Stamp all CSS files with the current time to guarantee cache invalidation
+find "$THEME_DEST" -name "*.css" -exec touch {} +
 ok "Copied to $THEME_DEST"
 
 if $SYSTEM_INSTALL; then
   SYSTEM_DEST="/usr/share/themes/$THEME_NAME"
-  if sudo cp -a "$THEME_SRC" "$SYSTEM_DEST" 2>/dev/null; then
+  if sudo cp -r "$THEME_SRC" "$SYSTEM_DEST" 2>/dev/null; then
+    sudo find "$SYSTEM_DEST" -name "*.css" -exec touch {} +
     ok "Copied to $SYSTEM_DEST (system-wide)"
   else
     warn "Could not install system-wide — skipping (no sudo access)"
@@ -122,18 +127,49 @@ if command -v flatpak >/dev/null 2>&1; then
   ok "Flatpak filesystem + env overrides applied"
 fi
 
-# ── 7. Try to reload GNOME Shell ──────────────────────────────────────────────
-if [[ -n "${DISPLAY:-}" && -z "${WAYLAND_DISPLAY:-}" ]] && command -v gdbus >/dev/null 2>&1; then
-  section "Reloading GNOME Shell (X11)"
-  gdbus call --session \
-    --dest org.gnome.Shell \
-    --object-path /org/gnome/Shell \
-    --method org.gnome.Shell.Eval 'Main.loadTheme()' >/dev/null 2>&1 \
-    && ok "Shell theme reloaded" \
-    || warn "Could not reload automatically — re-login to apply"
-elif [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
-  echo
-  warn "Wayland session — re-login to apply the shell theme"
+# ── 7. Clear GTK CSS cache ────────────────────────────────────────────────────
+section "Clearing GTK CSS cache"
+# GTK compiles CSS to a binary cache; stale cache ignores updated theme files
+GTK_CACHE_DIRS=(
+  "${HOME}/.cache/glib-2.0"
+  "${HOME}/.cache/gtk-4.0"
+  "${HOME}/.cache/gtk-3.0"
+)
+for d in "${GTK_CACHE_DIRS[@]}"; do
+  if [ -d "$d" ]; then
+    rm -rf "$d"
+    ok "Removed $d"
+  fi
+done
+
+# ── 8. Try to reload GNOME Shell ──────────────────────────────────────────────
+section "Reloading GNOME Shell"
+RELOADED=false
+
+# Wayland: use busctl (works without --session restriction on most distros)
+if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
+  if command -v busctl >/dev/null 2>&1; then
+    busctl --user call org.gnome.Shell /org/gnome/Shell \
+      org.gnome.Shell Eval s 'Main.loadTheme()' >/dev/null 2>&1 \
+      && { ok "Shell theme reloaded (Wayland/busctl)"; RELOADED=true; } \
+      || true
+  fi
+fi
+
+# X11: use gdbus
+if ! $RELOADED && [[ -n "${DISPLAY:-}" ]]; then
+  if command -v gdbus >/dev/null 2>&1; then
+    gdbus call --session \
+      --dest org.gnome.Shell \
+      --object-path /org/gnome/Shell \
+      --method org.gnome.Shell.Eval 'Main.loadTheme()' >/dev/null 2>&1 \
+      && { ok "Shell theme reloaded (X11/gdbus)"; RELOADED=true; } \
+      || true
+  fi
+fi
+
+if ! $RELOADED; then
+  warn "Could not reload shell automatically — re-login to apply the shell theme"
 fi
 
 # ── Done ──────────────────────────────────────────────────────────────────────

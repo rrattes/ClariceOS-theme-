@@ -267,8 +267,14 @@
 
     .calendar {
       padding: 6px;
-      background-color: rgba(255,255,255,0.70);
+      background-color: transparent;
       border-radius: 14px;
+    }
+
+    /* Match datemenu-popover background to quick-settings panel */
+    .datemenu-popover {
+      background-color: rgba(242, 246, 252, 0.97);
+      border-color: rgba(178, 192, 210, 0.88);
     }
 
     .calendar-month-header {
